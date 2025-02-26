@@ -16,6 +16,29 @@
             font-family: 'Playfair Display', serif;
             height: 100vh;
             overflow: hidden;
+            animation: shake 0.5s infinite;
+        }
+
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            50% { transform: translateX(5px); }
+            75% { transform: translateX(-5px); }
+            100% { transform: translateX(0); }
+        }
+
+        .heartbeat {
+            position: absolute;
+            width: 100%;
+            height: 100vh;
+            background: radial-gradient(circle, transparent 60%, var(--primary) 100%);
+            animation: pulse 4s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(1.2); }
+            100% { opacity: 0.3; transform: scale(1); }
         }
 
         .eternal-heart {
@@ -28,7 +51,7 @@
         }
 
         .names {
-            font-size: 4rem;
+            font-size: 3rem; /* Reduced size */
             color: var(--secondary);
             text-shadow: 0 0 20px var(--primary);
             margin: 0;
@@ -36,18 +59,18 @@
         }
 
         .heart-divider {
-            font-size: 5rem;
+            font-size: 4rem; /* Reduced size */
             color: var(--primary);
-            margin: 2rem 0;
+            margin: 1.5rem 0; /* Adjusted margin */
             animation: heartbeat 1.2s infinite;
         }
 
         .love-statement {
-            font-size: 1.5rem;
+            font-size: 1.2rem; /* Reduced size */
             color: var(--secondary);
-            max-width: 600px;
+            max-width: 500px; /* Adjusted width */
             margin: 0 auto;
-            padding: 2rem;
+            padding: 1.5rem; /* Adjusted padding */
             border: 2px solid var(--primary);
             border-radius: 15px;
             background: rgba(26, 26, 26, 0.9);
@@ -87,10 +110,39 @@
             0% { transform: translateY(-100%); }
             100% { transform: translateY(100vh); }
         }
+
+        .interactive-area {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            cursor: crosshair;
+        }
+
+        .ripple {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--primary);
+            border-radius: 50%;
+            animation: rippleEffect 1.5s infinite;
+        }
+
+        @keyframes rippleEffect {
+            0% { transform: scale(0.1); opacity: 1; }
+            100% { transform: scale(10); opacity: 0; }
+        }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Background Music -->
+    <audio autoplay loop>
+        <source src="romantic-song.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div class="heartbeat"></div>
+    
     <!-- Animated scan lines -->
     <div class="scan-line" style="animation-delay: 0s"></div>
     <div class="scan-line" style="animation-delay: 1s"></div>
@@ -108,11 +160,457 @@
         <h1 class="names">Daphine<br>❤<br>Junior</h1>
         <div class="heart-divider">❤</div>
         <div class="love-statement">
-            "In your eyes I found my forever,<br>
-            With every beat my heart says 'always yours'.<br>
-            My love for you grows deeper with time,<br>
-            You are my eternal flame, my sublime rhyme."
+            "Your beauty leaves me breathless.<br>
+            Every glance at you feels like magic.<br>
+            I love you endlessly.<br>
+            Forever yours, Junior ❤️"
         </div>
     </div>
+
+    <div class="interactive-area"></div>
+
+    <script>
+        // Interactive ripple effect on click
+        document.querySelector('.interactive-area').addEventListener('click', (e) => {
+            const ripple = document.createElement('div');
+            ripple.className = 'ripple';
+            ripple.style.left = e.clientX + 'px';
+            ripple.style.top = e.clientY + 'px';
+            document.body.appendChild(ripple);
+            setTimeout(() => ripple.remove(), 1500);
+        });
+
+        // Create floating love messages
+        const messages = [
+            "Forever Yours", 
+            "Je t'aime", 
+            "Te amo", 
+            "愛してる", 
+            "My Soulmate",
+            "You are my everything",
+            "I love you more every day",
+            "My heart beats for you",
+            "You complete me",
+            "Always and forever"
+        ];
+        setInterval(() => {
+            const msg = document.createElement('div');
+            msg.className = 'hidden-message';
+            msg.textContent = messages[Math.floor(Math.random() * messages.length)];
+            msg.style.left = Math.random() * 90 + '%';
+            document.body.appendChild(msg);
+            setTimeout(() => msg.remove(), 8000);
+        }, 3000);
+    </script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daphine ❤️ Junior - Eternal Love</title>
+    <style>
+        :root {
+            --primary: #ff69b4;
+            --secondary: #ffffff;
+        }
+
+        body {
+            margin: 0;
+            background: #000000;
+            font-family: 'Playfair Display', serif;
+            height: 100vh;
+            overflow: hidden;
+            animation: shake 0.5s infinite;
+        }
+
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            50% { transform: translateX(5px); }
+            75% { transform: translateX(-5px); }
+            100% { transform: translateX(0); }
+        }
+
+        .heartbeat {
+            position: absolute;
+            width: 100%;
+            height: 100vh;
+            background: radial-gradient(circle, transparent 60%, var(--primary) 100%);
+            animation: pulse 4s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(1.2); }
+            100% { opacity: 0.3; transform: scale(1); }
+        }
+
+        .eternal-heart {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 2;
+        }
+
+        .names {
+            font-size: 3rem; /* Reduced size */
+            color: var(--secondary);
+            text-shadow: 0 0 20px var(--primary);
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        .heart-divider {
+            font-size: 4rem; /* Reduced size */
+            color: var(--primary);
+            margin: 1.5rem 0; /* Adjusted margin */
+            animation: heartbeat 1.2s infinite;
+        }
+
+        .love-statement {
+            font-size: 1.2rem; /* Reduced size */
+            color: var(--secondary);
+            max-width: 500px; /* Adjusted width */
+            margin: 0 auto;
+            padding: 1.5rem; /* Adjusted padding */
+            border: 2px solid var(--primary);
+            border-radius: 15px;
+            background: rgba(26, 26, 26, 0.9);
+        }
+
+        .floating-heart {
+            position: absolute;
+            color: var(--primary);
+            font-size: 1.5rem;
+            animation: float 6s infinite linear;
+            opacity: 0;
+        }
+
+        .scan-line {
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(to right, transparent 0%, var(--primary) 50%, transparent 100%);
+            animation: scan 4s infinite linear;
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            15% { transform: scale(1.2); }
+            30% { transform: scale(1); }
+            45% { transform: scale(1.1); }
+            60% { transform: scale(1); }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+        }
+
+        @keyframes scan {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(100vh); }
+        }
+
+        .interactive-area {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            cursor: crosshair;
+        }
+
+        .ripple {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--primary);
+            border-radius: 50%;
+            animation: rippleEffect 1.5s infinite;
+        }
+
+        @keyframes rippleEffect {
+            0% { transform: scale(0.1); opacity: 1; }
+            100% { transform: scale(10); opacity: 0; }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Background Music -->
+    <audio autoplay loop>
+        <source src="romantic-song.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div class="heartbeat"></div>
+    
+    <!-- Animated scan lines -->
+    <div class="scan-line" style="animation-delay: 0s"></div>
+    <div class="scan-line" style="animation-delay: 1s"></div>
+    <div class="scan-line" style="animation-delay: 2s"></div>
+
+    <!-- Floating hearts background -->
+    <div class="floating-heart" style="left: 10%">❤</div>
+    <div class="floating-heart" style="left: 30%">❤</div>
+    <div class="floating-heart" style="left: 50%">❤</div>
+    <div class="floating-heart" style="left: 70%">❤</div>
+    <div class="floating-heart" style="left: 90%">❤</div>
+
+    <!-- Stable central content -->
+    <div class="eternal-heart">
+        <h1 class="names">Daphine<br>❤<br>Junior</h1>
+        <div class="heart-divider">❤</div>
+        <div class="love-statement">
+            "Your beauty leaves me breathless.<br>
+            Every glance at you feels like magic.<br>
+            I love you endlessly.<br>
+            Forever yours, Junior ❤️"
+        </div>
+    </div>
+
+    <div class="interactive-area"></div>
+
+    <script>
+        // Interactive ripple effect on click
+        document.querySelector('.interactive-area').addEventListener('click', (e) => {
+            const ripple = document.createElement('div');
+            ripple.className = 'ripple';
+            ripple.style.left = e.clientX + 'px';
+            ripple.style.top = e.clientY + 'px';
+            document.body.appendChild(ripple);
+            setTimeout(() => ripple.remove(), 1500);
+        });
+
+        // Create floating love messages
+        const messages = [
+            "Forever Yours", 
+            "Je t'aime", 
+            "Te amo", 
+            "愛してる", 
+            "My Soulmate",
+            "You are my everything",
+            "I love you more every day",
+            "My heart beats for you",
+            "You complete me",
+            "Always and forever"
+        ];
+        setInterval(() => {
+            const msg = document.createElement('div');
+            msg.className = 'hidden-message';
+            msg.textContent = messages[Math.floor(Math.random() * messages.length)];
+            msg.style.left = Math.random() * 90 + '%';
+            document.body.appendChild(msg);
+            setTimeout(() => msg.remove(), 8000);
+        }, 3000);
+    </script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daphine ❤️ Junior - Eternal Love</title>
+    <style>
+        :root {
+            --primary: #ff69b4;
+            --secondary: #ffffff;
+        }
+
+        body {
+            margin: 0;
+            background: #000000;
+            font-family: 'Playfair Display', serif;
+            height: 100vh;
+            overflow: hidden;
+            animation: shake 0.5s infinite;
+        }
+
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            50% { transform: translateX(5px); }
+            75% { transform: translateX(-5px); }
+            100% { transform: translateX(0); }
+        }
+
+        .heartbeat {
+            position: absolute;
+            width: 100%;
+            height: 100vh;
+            background: radial-gradient(circle, transparent 60%, var(--primary) 100%);
+            animation: pulse 4s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(1.2); }
+            100% { opacity: 0.3; transform: scale(1); }
+        }
+
+        .eternal-heart {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 2;
+        }
+
+        .names {
+            font-size: 3rem; /* Reduced size */
+            color: var(--secondary);
+            text-shadow: 0 0 20px var(--primary);
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        .heart-divider {
+            font-size: 4rem; /* Reduced size */
+            color: var(--primary);
+            margin: 1.5rem 0; /* Adjusted margin */
+            animation: heartbeat 1.2s infinite;
+        }
+
+        .love-statement {
+            font-size: 1.2rem; /* Reduced size */
+            color: var(--secondary);
+            max-width: 500px; /* Adjusted width */
+            margin: 0 auto;
+            padding: 1.5rem; /* Adjusted padding */
+            border: 2px solid var(--primary);
+            border-radius: 15px;
+            background: rgba(26, 26, 26, 0.9);
+        }
+
+        .floating-heart {
+            position: absolute;
+            color: var(--primary);
+            font-size: 1.5rem;
+            animation: float 6s infinite linear;
+            opacity: 0;
+        }
+
+        .scan-line {
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(to right, transparent 0%, var(--primary) 50%, transparent 100%);
+            animation: scan 4s infinite linear;
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            15% { transform: scale(1.2); }
+            30% { transform: scale(1); }
+            45% { transform: scale(1.1); }
+            60% { transform: scale(1); }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+        }
+
+        @keyframes scan {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(100vh); }
+        }
+
+        .interactive-area {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            cursor: crosshair;
+        }
+
+        .ripple {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--primary);
+            border-radius: 50%;
+            animation: rippleEffect 1.5s infinite;
+        }
+
+        @keyframes rippleEffect {
+            0% { transform: scale(0.1); opacity: 1; }
+            100% { transform: scale(10); opacity: 0; }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Background Music -->
+    <audio autoplay loop>
+        <source src="romantic-song.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div class="heartbeat"></div>
+    
+    <!-- Animated scan lines -->
+    <div class="scan-line" style="animation-delay: 0s"></div>
+    <div class="scan-line" style="animation-delay: 1s"></div>
+    <div class="scan-line" style="animation-delay: 2s"></div>
+
+    <!-- Floating hearts background -->
+    <div class="floating-heart" style="left: 10%">❤</div>
+    <div class="floating-heart" style="left: 30%">❤</div>
+    <div class="floating-heart" style="left: 50%">❤</div>
+    <div class="floating-heart" style="left: 70%">❤</div>
+    <div class="floating-heart" style="left: 90%">❤</div>
+
+    <!-- Stable central content -->
+    <div class="eternal-heart">
+        <h1 class="names">Daphine<br>❤<br>Junior</h1>
+        <div class="heart-divider">❤</div>
+        <div class="love-statement">
+            "Your beauty leaves me breathless.<br>
+            Every glance at you feels like magic.<br>
+            I love you endlessly.<br>
+            Forever yours, Junior ❤️"
+        </div>
+    </div>
+
+    <div class="interactive-area"></div>
+
+    <script>
+        // Interactive ripple effect on click
+        document.querySelector('.interactive-area').addEventListener('click', (e) => {
+            const ripple = document.createElement('div');
+            ripple.className = 'ripple';
+            ripple.style.left = e.clientX + 'px';
+            ripple.style.top = e.clientY + 'px';
+            document.body.appendChild(ripple);
+            setTimeout(() => ripple.remove(), 1500);
+        });
+
+        // Create floating love messages
+        const messages = [
+            "Forever Yours", 
+            "Je t'aime", 
+            "Te amo", 
+            "愛してる", 
+            "My Soulmate",
+            "You are my everything",
+            "I love you more every day",
+            "My heart beats for you",
+            "You complete me",
+            "Always and forever"
+        ];
+        setInterval(() => {
+            const msg = document.createElement('div');
+            msg.className = 'hidden-message';
+            msg.textContent = messages[Math.floor(Math.random() * messages.length)];
+            msg.style.left = Math.random() * 90 + '%';
+            document.body.appendChild(msg);
+            setTimeout(() => msg.remove(), 8000);
+        }, 3000);
+    </script>
 </body>
 </html>
