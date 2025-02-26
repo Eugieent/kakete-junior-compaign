@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daphine ❤️ Junior - Eternal Love</title>
+    <style>
+        :root {
+            --primary: #ff69b4;
+            --secondary: #ffffff;
+        }
+
+        body {
+            margin: 0;
+            background: #000000;
+            font-family: 'Playfair Display', serif;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .eternal-heart {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 2;
+        }
+
+        .names {
+            font-size: 4rem;
+            color: var(--secondary);
+            text-shadow: 0 0 20px var(--primary);
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        .heart-divider {
+            font-size: 5rem;
+            color: var(--primary);
+            margin: 2rem 0;
+            animation: heartbeat 1.2s infinite;
+        }
+
+        .love-statement {
+            font-size: 1.5rem;
+            color: var(--secondary);
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 2rem;
+            border: 2px solid var(--primary);
+            border-radius: 15px;
+            background: rgba(26, 26, 26, 0.9);
+        }
+
+        .floating-heart {
+            position: absolute;
+            color: var(--primary);
+            font-size: 1.5rem;
+            animation: float 6s infinite linear;
+            opacity: 0;
+        }
+
+        .scan-line {
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(to right, transparent 0%, var(--primary) 50%, transparent 100%);
+            animation: scan 4s infinite linear;
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            15% { transform: scale(1.2); }
+            30% { transform: scale(1); }
+            45% { transform: scale(1.1); }
+            60% { transform: scale(1); }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+        }
+
+        @keyframes scan {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(100vh); }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Animated scan lines -->
+    <div class="scan-line" style="animation-delay: 0s"></div>
+    <div class="scan-line" style="animation-delay: 1s"></div>
+    <div class="scan-line" style="animation-delay: 2s"></div>
+
+    <!-- Floating hearts background -->
+    <div class="floating-heart" style="left: 10%">❤</div>
+    <div class="floating-heart" style="left: 30%">❤</div>
+    <div class="floating-heart" style="left: 50%">❤</div>
+    <div class="floating-heart" style="left: 70%">❤</div>
+    <div class="floating-heart" style="left: 90%">❤</div>
+
+    <!-- Stable central content -->
+    <div class="eternal-heart">
+        <h1 class="names">Daphine<br>❤<br>Junior</h1>
+        <div class="heart-divider">❤</div>
+        <div class="love-statement">
+            "In your eyes I found my forever,<br>
+            With every beat my heart says 'always yours'.<br>
+            My love for you grows deeper with time,<br>
+            You are my eternal flame, my sublime rhyme."
+        </div>
+    </div>
+</body>
+</html>
