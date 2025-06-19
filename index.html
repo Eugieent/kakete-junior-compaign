@@ -86,6 +86,19 @@
             color: var(--nrm-yellow);
         }
         
+        .nrm-tag {
+            display: inline-flex;
+            align-items: center;
+            background: var(--nrm-yellow);
+            color: var(--nrm-black);
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            margin-left: 10px;
+            font-weight: bold;
+            transform: rotate(-5deg);
+        }
+        
         .slogan {
             font-size: 1.4rem;
             font-weight: 700;
@@ -331,13 +344,8 @@
             color: var(--nrm-black);
         }
         
-        .btn-volunteer {
-            background: linear-gradient(to right, var(--nrm-red), #a00);
-            color: white;
-        }
-        
-        .btn-donate {
-            background: linear-gradient(to right, #0066CC, #0044aa);
+        .btn-collaborate {
+            background: linear-gradient(to right, #25D366, #128C7E);
             color: white;
         }
         
@@ -440,6 +448,16 @@
         .contact-icon {
             color: var(--nrm-yellow);
             font-size: 1.4rem;
+        }
+        
+        .contact-link {
+            color: var(--nrm-yellow);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .contact-link:hover {
+            text-decoration: underline;
         }
         
         .nrm-logo {
@@ -622,6 +640,11 @@
             .social-title {
                 font-size: 1.8rem;
             }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
         }
     </style>
 </head>
@@ -642,7 +665,7 @@
             <div class="logo-icon">
                 <i class="fas fa-vote-yea"></i>
             </div>
-            <div class="logo-text">Kakete <span>Junior</span></div>
+            <div class="logo-text">Kakete Junior<span class="nrm-tag">NRM</span></div>
         </div>
         <div class="slogan">Our Time Is Now</div>
     </header>
@@ -650,47 +673,36 @@
     <!-- Hero Section -->
     <section class="hero-section">
         <div class="hero-content">
-            <div class="badge pulse">NRM</div>
+            <div class="badge pulse">CENTRAL DIVISION</div>
             <h1 class="candidate-name floating">Kakete Junior</h1>
             <h2 class="position">For Male Youth Councilor</h2>
             <h3 class="tagline">Empowering the Youth of Central Division</h3>
             
             <div class="campaign-card">
-                <h2 class="card-title">A New Vision for Our Youth</h2>
+                <h2 class="card-title">Real Solutions for Our Youth</h2>
                 <p style="font-size: 1.3rem; text-align: center; margin-bottom: 35px; max-width: 900px; margin-left: auto; margin-right: auto; line-height: 1.8;">
-                    "I stand before you as a voice for the future, committed to creating opportunities, 
-                    fostering innovation, and building a Central Division where every young person can thrive. 
-                    Together, we will shape a brighter tomorrow through practical solutions and youth-centered initiatives."
+                    "As your Youth Councilor, I'll focus on practical solutions that make a real difference in your lives. 
+                    From scholarship awareness to business guidance, I'm committed to creating opportunities that matter."
                 </p>
                 
                 <div class="promise-grid">
                     <div class="promise-card">
                         <div class="promise-icon">
-                            <i class="fas fa-brain"></i>
+                            <i class="fas fa-graduation-cap"></i>
                         </div>
                         <div class="promise-content">
-                            <h3 class="promise-title">Leadership Development</h3>
-                            <p>Establish youth mentorship programs and leadership academies to cultivate tomorrow's leaders. Provide training in public speaking, critical thinking, and community organization.</p>
+                            <h3 class="promise-title">Scholarship Awareness</h3>
+                            <p>Create awareness of all council scholarships and educational opportunities for youth. Establish a scholarship information portal and regular awareness campaigns.</p>
                         </div>
                     </div>
                     
                     <div class="promise-card">
                         <div class="promise-icon">
-                            <i class="fas fa-lightbulb"></i>
+                            <i class="fas fa-briefcase"></i>
                         </div>
                         <div class="promise-content">
-                            <h3 class="promise-title">Innovation Hubs</h3>
-                            <p>Create technology centers across Central Division with resources for startups, coding workshops, and creative projects. Equip youth with digital skills for the 21st century.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="promise-card">
-                        <div class="promise-icon">
-                            <i class="fas fa-hand-holding-usd"></i>
-                        </div>
-                        <div class="promise-content">
-                            <h3 class="promise-title">Economic Empowerment</h3>
-                            <p>Launch microfinance programs and business training for young entrepreneurs. Connect youth with investors and create apprenticeship opportunities with local businesses.</p>
+                            <h3 class="promise-title">Business Guidance</h3>
+                            <p>Provide guidance on youth business registration and licensing. Connect young entrepreneurs with mentors and simplify business startup processes.</p>
                         </div>
                     </div>
                     
@@ -699,28 +711,38 @@
                             <i class="fas fa-users"></i>
                         </div>
                         <div class="promise-content">
-                            <h3 class="promise-title">Community Engagement</h3>
-                            <p>Develop youth-driven community projects and volunteer networks. Create platforms for youth to voice concerns and participate in local decision-making processes.</p>
+                            <h3 class="promise-title">Youth Representation</h3>
+                            <p>Ensure youth voices are heard in council decisions. Create monthly youth forums and establish a youth advisory committee to the council.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="promise-card">
+                        <div class="promise-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <div class="promise-content">
+                            <h3 class="promise-title">Skill Development</h3>
+                            <p>Organize practical skill development workshops relevant to the job market. Focus on digital literacy, financial management, and vocational training.</p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="stats-section">
                     <div class="stat-card">
-                        <div class="stat-number">15+</div>
-                        <div class="stat-label">Youth Initiatives</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">2000+</div>
+                        <div class="stat-number">1M+</div>
                         <div class="stat-label">Youth Engaged</div>
                     </div>
                     <div class="stat-card">
-                        <div class="stat-number">5</div>
-                        <div class="stat-label">Innovation Hubs</div>
+                        <div class="stat-number">250+</div>
+                        <div class="stat-label">Scholarships Secured</div>
                     </div>
                     <div class="stat-card">
                         <div class="stat-number">100%</div>
                         <div class="stat-label">Commitment</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Availability</div>
                     </div>
                 </div>
             </div>
@@ -731,27 +753,24 @@
     <section class="cta-section">
         <h2 class="cta-title">Join the Movement</h2>
         <p style="font-size: 1.3rem; max-width: 800px; margin: 0 auto 40px; line-height: 1.8;">
-            This election is about our future. With your support, we can bring fresh energy and innovative 
+            This election is about our future. With your support, we can bring fresh energy and practical 
             solutions to Central Division. Let's build a community where every young person has the opportunity 
-            to succeed and contribute to our collective progress.
+            to succeed.
         </p>
         
         <div class="cta-buttons">
             <button class="btn btn-vote">
                 <i class="fas fa-check-circle"></i> Vote Now
             </button>
-            <button class="btn btn-volunteer">
-                <i class="fas fa-hands-helping"></i> Volunteer
-            </button>
-            <button class="btn btn-donate">
-                <i class="fas fa-donate"></i> Donate
-            </button>
+            <a href="https://wa.me/256750092404" class="btn btn-collaborate" target="_blank">
+                <i class="fab fa-whatsapp"></i> Collaborate
+            </a>
         </div>
     </section>
     
     <!-- Social Section -->
     <section class="social-section">
-        <h2 class="social-title">Connect With Our Campaign</h2>
+        <h2 class="social-title">Connect With Me Directly</h2>
         <div class="social-icons">
             <a href="https://wa.me/256750092404" class="social-icon" target="_blank">
                 <i class="fab fa-whatsapp"></i>
@@ -759,7 +778,7 @@
         </div>
         <div style="margin-top: 30px; font-size: 1.4rem;">
             <p>Direct WhatsApp: <strong>0750 092404</strong></p>
-            <p style="margin-top: 10px; font-size: 1.2rem;">Message me anytime for questions, suggestions, or support!</p>
+            <p style="margin-top: 10px; font-size: 1.2rem;">Message me anytime for questions, suggestions, or collaboration!</p>
         </div>
     </section>
     
@@ -770,13 +789,13 @@
                 <div class="contact-icon">
                     <i class="fas fa-phone"></i>
                 </div>
-                <div>0750 092404</div>
+                <div><a href="tel:0750092404" class="contact-link">0750 092404</a></div>
             </div>
             <div class="contact-item">
                 <div class="contact-icon">
                     <i class="fas fa-envelope"></i>
                 </div>
-                <div>kaketejunior@gmail.com</div>
+                <div><a href="mailto:kaketejunior@campaign.com" class="contact-link">kaketejunior@campaign.com</a></div>
             </div>
             <div class="contact-item">
                 <div class="contact-icon">
@@ -790,7 +809,7 @@
             <i class="fas fa-bus"></i>
         </div>
         <p class="footer-text">Paid for by Friends of Kakete Junior · Central Division Youth Council Campaign</p>
-        <p class="footer-text">Together, we will build a brighter future for Central Division through youth empowerment and innovative leadership.</p>
+        <p class="footer-text">Together, we will build a brighter future for Central Division through youth empowerment and practical leadership.</p>
         <p class="copyright">© 2023 Kakete Junior Campaign. All Rights Reserved.</p>
     </footer>
     
@@ -907,4 +926,4 @@
         });
     </script>
 </body>
-                            </html>
+</html>
